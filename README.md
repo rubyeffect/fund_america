@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-The details on usage are present at: http://www.rubyeffect.com/blog/category/fundamerica. If you wish to see FundAmerica's API documentation, please visit the url: https://apps.fundamerica.com/support/documentation
+The details on usage are present at: http://www.rubyeffect.com/blog/category/fundamerica/. If you wish to see FundAmerica's API documentation, please visit the url: https://apps.fundamerica.com/support/documentation
 
 ## TODO
 
@@ -37,7 +37,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/fund_america/fork )
+1. Fork it ( https://github.com/rubyeffect/fund_america/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
