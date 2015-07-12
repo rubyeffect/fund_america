@@ -30,10 +30,13 @@ Gem::Specification.new do |spec|
   # Development Dependencies
   spec.add_development_dependency "bundler", "~> 1.9"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency 'pry'
-  spec.add_development_dependency 'rspec'
+  spec.add_development_dependency 'pry', "~> 0.10.1"
+  spec.add_development_dependency 'rspec', "~> 3.2.0"
 
   # Runtime Dependencies
-  spec.add_runtime_dependency 'httparty'
-  spec.add_runtime_dependency 'json'
+  spec.add_runtime_dependency 'httparty', "~> 0.13.3"
+  spec.add_runtime_dependency 'json', "~> 1.8.1"
+
+  # Ruby Dependency
+  spec.required_ruby_version = "~> 2.2.2"
 end
