@@ -20,7 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
-The details on usage are present at: http://www.rubyeffect.com/blog/category/fundamerica/. If you wish to see FundAmerica's API documentation, please visit the url: https://apps.fundamerica.com/support/documentation
+The details on usage of FundAmerica gem are present at: http://www.rubyeffect.com/blog/category/fundamerica/. If you wish to see FundAmerica's API documentation, please visit the url: https://apps.fundamerica.com/support/documentation
+
+Entity End Points Usage - http://www.rubyeffect.com/blog/fundamerica-gem-entity-endpoints/
 
 ## TODO
 
