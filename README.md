@@ -1,6 +1,6 @@
 # FundAmerica
 
-This is a ruby gem to provide easy implementation of FundAmerica API
+This is a ruby gem to provide easy implementation of FundAmerica API. This branch has the source code of version: 0.0.1
 
 ## Installation
 
