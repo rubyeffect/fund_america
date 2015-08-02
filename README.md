@@ -25,6 +25,14 @@ The details on usage of FundAmerica gem are present at: http://www.rubyeffect.co
 1. FundAmerica Gem Introductory Post - http://www.rubyeffect.com/blog/fundamerica-gem/
 2. Entity Endpoints Part One - http://www.rubyeffect.com/blog/fundamerica-gem-entity-endpoints/
 3. Entity Endpoints Part Two - http://www.rubyeffect.com/blog/fundamerica-gem-entity-endpoints-part-two/
+4. API Info - http://www.rubyeffect.com/blog/fundamerica-gem-api-info-ach-authorizations/
+5. ACH Authorizations - http://www.rubyeffect.com/blog/fundamerica-gem-api-info-ach-authorizations/
+6. Background Checks - http://www.rubyeffect.com/blog/fundamerica-gem-background-checks-bank-info/
+7. Bank Info - http://www.rubyeffect.com/blog/fundamerica-gem-background-checks-bank-info/
+8. Error Handling - http://www.rubyeffect.com/blog/fundamerica-gem-error-handling/
+9. Offerings - http://www.rubyeffect.com/blog/fundamerica-gem-offerings/
+10. Cancel Offering Request - http://www.rubyeffect.com/blog/fundamerica-gem-cancel-close-offering-requests/
+11. Close Offering Request - http://www.rubyeffect.com/blog/fundamerica-gem-cancel-close-offering-requests/
 
 ## TODO
 
