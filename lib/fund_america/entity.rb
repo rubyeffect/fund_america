@@ -71,6 +71,13 @@ module FundAmerica
         API::request(:patch, FundAmerica.base_uri + "entities/#{entity_id}/investor_suitability", options)
       end
 
+      # End point: https://apps.fundamerica.com/api/entities/:id/investor_payments (GET)
+      # Usage: FundAmerica::Entity.investor_payments(entity_id)
+      def investor_payments(entity_id)
+        API::request(:get, FundAmerica.base_uri + "entities/#{entity_id}/investor_payments")
+      end
+
+
     end
   end
 end
