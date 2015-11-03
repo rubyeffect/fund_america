@@ -10,7 +10,6 @@ module FundAmerica
         response = HTTParty.send(method, uri, options)
         parsed_response = JSON.parse(response.body)
         if response.code.to_i == 200
-          puts parsed_response.inspect
           # Returns parsed_response - a hash of response body
           # if response is successful
           parsed_response
