@@ -77,6 +77,13 @@ module FundAmerica
         API::request(:get, FundAmerica.base_uri + "entities/#{entity_id}/investor_payments")
       end
 
+      # https://apps.fundamerica.com/api/entities/:id/bank_transfer_methods (GET)
+      # Usage: FundAmerica::Entity.bank_transfer_methods
+      # Output: Returns Bank Transfer Method informations of an entity
+      def bank_transfer_method(entity_id)
+        API::request(:get, FundAmerica.base_uri + "entities/#{entity_id}/bank_transfer_methods")
+      end
+
 
     end
   end
