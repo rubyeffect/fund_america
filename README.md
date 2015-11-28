@@ -54,3 +54,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## Contributors
+
+1. Dan M (https://github.com/dan987)
+2. Charles (https://github.com/cspray)

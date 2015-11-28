@@ -30,3 +30,6 @@ require 'fund_america/webhook_log'
 require 'fund_america/investor_payment'
 require 'fund_america/distribution'
 require 'fund_america/holding'
+require 'fund_america/email_log'
+require 'fund_america/bank_transfer_method'
+
