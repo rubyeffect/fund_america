@@ -26,10 +26,10 @@ module FundAmerica
       end
 
       # End point: https://apps.fundamerica.com/api/entities/:id (GET)
-      # Usage: FundAmerica::Entity.details(entity_id)
+      # Usage: FundAmerica::Entity.details(entity_id), request options &_expand[<attribute_name>]=1
       # Output: Returns the details of an entity with matching id
-      def details(entity_id)
-        API::request(:get, FundAmerica.base_uri + "entities/#{entity_id}")
+      def details(entity_id, request_options = "")
+        API::request(:get, FundAmerica.base_uri + "entities/#{entity_id}" + request_options)
       end
 
       # End point: https://apps.fundamerica.com/api/entities/:id (DELETE)
