@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
 
   # Runtime Dependencies
   spec.add_runtime_dependency 'httparty', "~> 0.13.3"
-  spec.add_runtime_dependency 'json', "~> 1.8.3"
+  spec.add_runtime_dependency 'json', "1.8.1"
 
   # Ruby Dependency
   spec.required_ruby_version = "~> 2.2.2"
