@@ -22,17 +22,17 @@ Or install it yourself as:
 
 The details on usage of FundAmerica gem are present at: http://www.rubyeffect.com/blog/category/fundamerica/. If you wish to see FundAmerica's API documentation, please visit the url: https://apps.fundamerica.com/support/documentation
 
-1. FundAmerica Gem Introductory Post - http://www.rubyeffect.com/blog/fundamerica-gem/
-2. Entity Endpoints Part One - http://www.rubyeffect.com/blog/fundamerica-gem-entity-endpoints/
-3. Entity Endpoints Part Two - http://www.rubyeffect.com/blog/fundamerica-gem-entity-endpoints-part-two/
-4. API Info - http://www.rubyeffect.com/blog/fundamerica-gem-api-info-ach-authorizations/
-5. ACH Authorizations - http://www.rubyeffect.com/blog/fundamerica-gem-api-info-ach-authorizations/
-6. Background Checks - http://www.rubyeffect.com/blog/fundamerica-gem-background-checks-bank-info/
-7. Bank Info - http://www.rubyeffect.com/blog/fundamerica-gem-background-checks-bank-info/
-8. Error Handling - http://www.rubyeffect.com/blog/fundamerica-gem-error-handling/
-9. Offerings - http://www.rubyeffect.com/blog/fundamerica-gem-offerings/
-10. Cancel Offering Request - http://www.rubyeffect.com/blog/fundamerica-gem-cancel-close-offering-requests/
-11. Close Offering Request - http://www.rubyeffect.com/blog/fundamerica-gem-cancel-close-offering-requests/
+1. [FundAmerica Gem Introductory Post](http://www.rubyeffect.com/blog/fundamerica-gem/)
+2. [Entity Endpoints Part One](http://www.rubyeffect.com/blog/fundamerica-gem-entity-endpoints/)
+3. [Entity Endpoints Part Two](http://www.rubyeffect.com/blog/fundamerica-gem-entity-endpoints-part-two/)
+4. [API Info](http://www.rubyeffect.com/blog/fundamerica-gem-api-info-ach-authorizations/)
+5. [ACH Authorizations](http://www.rubyeffect.com/blog/fundamerica-gem-api-info-ach-authorizations/)
+6. [Background Checks](http://www.rubyeffect.com/blog/fundamerica-gem-background-checks-bank-info/)
+7. [Bank Info](http://www.rubyeffect.com/blog/fundamerica-gem-background-checks-bank-info/)
+8. [Error Handling](http://www.rubyeffect.com/blog/fundamerica-gem-error-handling/)
+9. [Offerings](http://www.rubyeffect.com/blog/fundamerica-gem-offerings/)
+10. [Cancel Offering Request](http://www.rubyeffect.com/blog/fundamerica-gem-cancel-close-offering-requests/)
+11. [Close Offering Request](http://www.rubyeffect.com/blog/fundamerica-gem-cancel-close-offering-requests/)
 
 ## TODO
 
@@ -59,3 +59,13 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 1. Dan M (https://github.com/dan987)
 2. Charles S (https://github.com/Designbookcom)
+
+## About RubyEffect
+
+![RubyEffect](http://www.rubyeffect.com/blog/wp-content/uploads/2015/05/cropped-re_original_logo.png)
+
+RubyEffect builds intuitive, live and elegant software that solves real world problems. We love open source and it's community.
+
+Liked this gem? You may also like the articles we post on our [blog](http://www.rubyeffect.com/blog). Please do check
+
+We would love to work on your ideas and see them grow. Say hello @ http://rubyeffect.com/contact
