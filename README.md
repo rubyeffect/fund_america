@@ -58,4 +58,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributors
 
 1. Dan M (https://github.com/dan987)
-2. Charles (https://github.com/cspray)
+2. Charles S (https://github.com/Designbookcom)
