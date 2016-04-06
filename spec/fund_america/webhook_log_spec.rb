@@ -53,25 +53,17 @@ describe FundAmerica::WebhookLog do
     end
 
     context 'using #list with pagination' do
-      let(:base_url) { "https://sandbox.fundamerica.com/api/webhook_logs" }
-      let(:base_url_with_params) { "https://sandbox.fundamerica.com/api/webhook_logs/?page=2&per=25" }
+      let(:base_url_with_default_params) { "https://sandbox.fundamerica.com/api/webhook_logs/?page=1&per=25" }
+      let(:base_url_with_custom_params) { "https://sandbox.fundamerica.com/api/webhook_logs/?page=2&per=26" }
 
       it "builds the correct URL with no parameters" do
-        expect(FundAmerica::API).to receive(:request).with(:get, base_url)
+        expect(FundAmerica::API).to receive(:request).with(:get, base_url_with_default_params)
         FundAmerica::WebhookLog.list
       end
 
-      it "throws an exception if only `page` is used" do
-        expect { FundAmerica::WebhookLog.list(page: 2) }.to raise_error(ArgumentError)
-      end
-
-      it "throws an exception if only `per` is used" do
-        expect { FundAmerica::WebhookLog.list(per: 25) }.to raise_error(ArgumentError)
-      end
-
       it "builds the correct URL with both parameters" do
-        expect(FundAmerica::API).to receive(:request).with(:get, base_url_with_params)
-        FundAmerica::WebhookLog.list(page: 2, per: 25)
+        expect(FundAmerica::API).to receive(:request).with(:get, base_url_with_custom_params)
+        FundAmerica::WebhookLog.list(page: 2, per: 26)
       end
     end
 
