@@ -52,6 +52,29 @@ describe FundAmerica::WebhookLog do
       expect(@response['resources']).to be_instance_of(Array)
     end
 
+    context 'using #list with pagination' do
+      let(:base_url) { "https://sandbox.fundamerica.com/api/webhook_logs" }
+      let(:base_url_with_params) { "https://sandbox.fundamerica.com/api/webhook_logs/?page=2&per=25" }
+
+      it "builds the correct URL with no parameters" do
+        expect(FundAmerica::API).to receive(:request).with(:get, base_url)
+        FundAmerica::WebhookLog.list
+      end
+
+      it "throws an exception if only `page` is used" do
+        expect { FundAmerica::WebhookLog.list(page: 2) }.to raise_error(ArgumentError)
+      end
+
+      it "throws an exception if only `per` is used" do
+        expect { FundAmerica::WebhookLog.list(per: 25) }.to raise_error(ArgumentError)
+      end
+
+      it "builds the correct URL with both parameters" do
+        expect(FundAmerica::API).to receive(:request).with(:get, base_url_with_params)
+        FundAmerica::WebhookLog.list(page: 2, per: 25)
+      end
+    end
+
     context '#details' do
       it 'must have object as webhook_log' do
         unless @webhook.nil?
