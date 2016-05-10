@@ -9,6 +9,7 @@ require 'fund_america/error'
 # API end points below
 require 'fund_america/api_info'
 require 'fund_america/ach_authorization'
+require 'fund_america/aml_exception'
 require 'fund_america/background_check'
 require 'fund_america/bank_info'
 require 'fund_america/billing_log'
