@@ -6,7 +6,7 @@ module FundAmerica
       # Usage: FundAmerica::TradeReview.list
       # Output: Returns list of trade_reviews
       def list
-        API::request(:get, FundAmerica.base_uri + 'trade_reviews')
+        API::request(:get, 'trade_reviews')
       end
 
       # End point: https://sandbox.fundamerica.com/api/test_mode/trade_reviews/:id (PATCH)
@@ -22,7 +22,7 @@ module FundAmerica
       # Usage: FundAmerica::TradeReview.details(trade_review_id)
       # Output: Returns the details of an trade_review with matching id
       def details(trade_review_id)
-        API::request(:get, FundAmerica.base_uri + "trade_reviews/#{trade_review_id}")
+        API::request(:get, "trade_reviews/#{trade_review_id}")
       end
 
     end

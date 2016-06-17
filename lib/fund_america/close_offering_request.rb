@@ -6,7 +6,7 @@ module FundAmerica
       # Usage: FundAmerica::CloseOfferingRequest.list
       # Output: Returns list of close_offering_requests
       def list
-        API::request(:get, FundAmerica.base_uri + 'close_offering_requests')
+        API::request(:get, 'close_offering_requests')
       end
 
       # End point: https://apps.fundamerica.com/api/close_offering_requests (POST)
@@ -15,7 +15,7 @@ module FundAmerica
 
       # TODO - Test creation of close offering once offering has reached goal
       def create(options)
-        API::request(:post, FundAmerica.base_uri + 'close_offering_requests', options)
+        API::request(:post, 'close_offering_requests', options)
       end
 
       # End point: https://sandbox.fundamerica.com/api/test_mode/close_offering_requests/:id (PATCH)
@@ -31,7 +31,7 @@ module FundAmerica
       # Usage: FundAmerica::CloseOfferingRequest.details(close_offering_request_id)
       # Output: Returns the details of an close_offering_request with matching id
       def details(close_offering_request_id)
-        API::request(:get, FundAmerica.base_uri + "close_offering_requests/#{close_offering_request_id}")
+        API::request(:get, "close_offering_requests/#{close_offering_request_id}")
       end
 
     end

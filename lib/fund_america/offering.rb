@@ -6,14 +6,14 @@ module FundAmerica
       # Usage: FundAmerica::Offering.list
       # Output: Returns list of offerings
       def list
-        API::request(:get, FundAmerica.base_uri + 'offerings')
+        API::request(:get, 'offerings')
       end
 
       # End point: https://apps.fundamerica.com/api/offerings (POST)
       # Usage: FundAmerica::Offering.create(options)
       # Output: Creates a new offering
       def create(options)
-        API::request(:post, FundAmerica.base_uri + 'offerings', options)
+        API::request(:post, 'offerings', options)
       end
 
       # End point: https://apps.fundamerica.com/api/offerings/:id (PATCH)
@@ -29,35 +29,35 @@ module FundAmerica
       # Usage: FundAmerica::Offering.details(offering_id)
       # Output: Returns the details of an offering with matching id
       def details(offering_id)
-        API::request(:get, FundAmerica.base_uri + "offerings/#{offering_id}")
+        API::request(:get, "offerings/#{offering_id}")
       end
 
       # End point: https://apps.fundamerica.com/api/offerings/:id (DELETE)
       # Usage: FundAmerica::Offering.delete(offering_id)
       # Output: Deletes an offering with matching id
       def delete(offering_id)
-        API::request(:delete, FundAmerica.base_uri + "offerings/#{offering_id}")
+        API::request(:delete, "offerings/#{offering_id}")
       end
 
       # End point: https://apps.fundamerica.com/api/offerings/:id/billing_logs (GET)
       # Usage: FundAmerica::Offering.billing_logs(offering_id)
       # Output: Returns billing logs of an offering with matching id
       def billing_logs(offering_id)
-        API::request(:get, FundAmerica.base_uri + "offerings/#{offering_id}/billing_logs")
+        API::request(:get, "offerings/#{offering_id}/billing_logs")
       end
 
       # End point: https://apps.fundamerica.com/api/offerings/:id/escrow_ledger (GET)
       # Usage: FundAmerica::Offering.escrow_ledger(offering_id)
       # Output: Returns escrow_ledger of an offering with matching id
       def escrow_ledger(offering_id)
-        API::request(:get, FundAmerica.base_uri + "offerings/#{offering_id}/escrow_ledger")
+        API::request(:get, "offerings/#{offering_id}/escrow_ledger")
       end
 
       # End point: https://apps.fundamerica.com/api/offerings/:id/investment_payments (GET)
       # Usage: FundAmerica::Offering.investment_payments(offering_id)
       # Output: Returns investment_payments of an offering with matching id
       def investment_payments(offering_id)
-        API::request(:get, FundAmerica.base_uri + "offerings/#{offering_id}/investment_payments")
+        API::request(:get, "offerings/#{offering_id}/investment_payments")
       end
 
     end

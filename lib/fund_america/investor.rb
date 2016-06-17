@@ -6,14 +6,14 @@ module FundAmerica
       # Usage: FundAmerica::Investor.list
       # Output: Returns list of investors
       def list
-        API::request(:get, FundAmerica.base_uri + 'investors')
+        API::request(:get, 'investors')
       end
 
       # End point: https://apps.fundamerica.com/api/investors (POST)
       # Usage: FundAmerica::Investor.create(options)
       # Output: Creates a new investor - proxy, joint, ira
       def create(options)
-        API::request(:post, FundAmerica.base_uri + 'investors', options)
+        API::request(:post, 'investors', options)
       end
 
       # End point: https://apps.fundamerica.com/api/investors/:id (PATCH)
@@ -29,9 +29,8 @@ module FundAmerica
       # Usage: FundAmerica::Investor.details(entity_id)
       # Output: Returns the details of an investor with matching id
       def details(investor_id)
-        API::request(:get, FundAmerica.base_uri + "investors/#{investor_id}")
+        API::request(:get, "investors/#{investor_id}")
       end
     end
   end
 end
-

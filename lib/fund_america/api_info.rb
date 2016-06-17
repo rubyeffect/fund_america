@@ -9,7 +9,7 @@ module FundAmerica
       # The API class request method is a common method that takes care of
       # making API request, handling response and errors
       def info
-        API::request(:get, FundAmerica.base_uri + 'info')
+        API::request(:get, 'info')
       end
     end
   end

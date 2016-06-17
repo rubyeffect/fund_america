@@ -7,6 +7,7 @@ module FundAmerica
       # Handles response and errors
       def request method, uri, options={}
         options = FundAmerica.basic_auth.merge!({:body => options})
+        uri = FundAmerica.base_uri + uri unless uri.include?('test_mode')
         response = HTTParty.send(method, uri, options)
         parsed_response = JSON.parse(response.body)
         if response.code.to_i == 200
@@ -30,13 +31,13 @@ module FundAmerica
       # End point: https://apps.fundamerica.com/api/investorsuitabilitytokens (POST)
       # Usage: FundAmerica::API.investor_suitabilitytokens(options)
       def investor_suitabilitytokens(options)
-        API::request(:post, FundAmerica.base_uri + 'investorsuitabilitytokens', options)
+        API::request(:post, 'investorsuitabilitytokens', options)
       end
 
       # End point: https://apps.fundamerica.com/api/ledger_entries/:id (GET)
       # Usage: FundAmerica::API.ledger_entry(ledger_entry_id)
       def ledger_entry(ledger_entry_id)
-        API::request(:get, FundAmerica.base_uri + "ledger_entries/#{ledger_entry_id}")
+        API::request(:get, "ledger_entries/#{ledger_entry_id}")
       end
     end
   end
