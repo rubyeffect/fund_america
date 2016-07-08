@@ -114,7 +114,7 @@ module FundAmerica
 
       # https://apps.fundamerica.com/api/entities/:id/investor_accreditation (GET)
       # Usage: FundAmerica::Entity.investor_accreditation
-      # Output: Returns entity specific investor accreditation 
+      # Output: Returns entity specific investor accreditation information
       def investor_accreditation(entity_id)
         API::request(:get, "entities/#{entity_id}/investor_accreditation")
       end
