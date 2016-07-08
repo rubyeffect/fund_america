@@ -6,14 +6,14 @@ module FundAmerica
       # Usage: FundAmerica::CancelOfferingRequest.list
       # Output: Returns list of cancel_offering_requests
       def list
-        API::request(:get, FundAmerica.base_uri + 'cancel_offering_requests')
+        API::request(:get, 'cancel_offering_requests')
       end
 
       # End point: https://apps.fundamerica.com/api/cancel_offering_requests (POST)
       # Usage: FundAmerica::CancelOfferingRequest.create(options)
       # Output: Creates a new cancel_offering_request
       def create(options)
-        API::request(:post, FundAmerica.base_uri + 'cancel_offering_requests', options)
+        API::request(:post, 'cancel_offering_requests', options)
       end
 
       # End point: https://sandbox.fundamerica.com/api/test_mode/cancel_offering_requests/:id (PATCH)
@@ -29,7 +29,7 @@ module FundAmerica
       # Usage: FundAmerica::CancelOfferingRequest.details(cancel_offering_request_id)
       # Output: Returns the details of an cancel_offering_request with matching id
       def details(cancel_offering_request_id)
-        API::request(:get, FundAmerica.base_uri + "cancel_offering_requests/#{cancel_offering_request_id}")
+        API::request(:get, "cancel_offering_requests/#{cancel_offering_request_id}")
       end
 
     end
