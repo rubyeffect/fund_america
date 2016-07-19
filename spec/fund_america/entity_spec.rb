@@ -100,8 +100,12 @@ describe FundAmerica::Entity do
           expect(@entity_details).not_to be nil
         end
 
+        it 'must have entity as person' do
+          expect(@entity_details['type']).to eq('person')
+        end
+
         it 'must be an entity object' do
-          expect(@entity_details['object']).to eq('person')
+          expect(@entity_details['object']).to eq('entity')
         end
 
         it 'must return entity details for the given entity id' do
@@ -268,8 +272,12 @@ describe FundAmerica::Entity do
           expect(@entity_details).not_to be nil
         end
 
+        it 'must have a type of company' do
+          expect(@entity_details['type']).to eq('company')
+        end
+
         it 'must be an entity object' do
-          expect(@entity_details['object']).to eq('company')
+          expect(@entity_details['object']).to eq('entity')
         end
 
         it 'must return entity details for the given entity id' do
