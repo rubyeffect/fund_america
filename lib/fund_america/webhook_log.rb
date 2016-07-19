@@ -9,7 +9,7 @@ module FundAmerica
       #  * page - page number of results; starts at 1, not 0
       #  * per - number of results per page
       def list(page: 1, per: 25)
-        request_uri = "webhook_logs/?page=#{page}&per=#{per}" if page
+        request_uri = "webhook_logs/?page=#{page}&per=#{per}"
         API::request(:get, request_uri)
       end
 
