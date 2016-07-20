@@ -119,6 +119,14 @@ module FundAmerica
         API::request(:get, "entities/#{entity_id}/investor_accreditation")
       end
 
+      # https://apps.fundamerica.com/api/entities/:id/platform_investor (GET)
+      # Usage: FundAmerica::Entity.platform_investor 
+      # Output: Returns entity specific platform_investor information
+      # Note: FA platform investor information will also be included with investor information
+      def platform_investor(entity_id )
+        API::request(:get, "entities/#{entity_id}/platform_investor")
+      end
+
     end
   end
 end
