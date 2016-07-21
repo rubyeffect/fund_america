@@ -1,11 +1,9 @@
 require 'spec_helper'
 
-describe FundAmerica::WebhookLog do
+describe FundAmerica::AmlException do
   context '#list' do
     before(:all) do
-      @response = FundAmerica::WebhookLog.list
-      @webhook = nil
-      @webhook = @response['resources'].first unless @response.nil?
+      @response = FundAmerica::AmlException.list
     end
 
     it 'must have object in response' do
@@ -51,28 +49,28 @@ describe FundAmerica::WebhookLog do
     it 'must have resources as array' do
       expect(@response['resources']).to be_instance_of(Array)
     end
-
-    context 'using #list with pagination' do
-      let(:base_url_with_default_params) { "webhook_logs/?page=1&per=25" }
-      let(:base_url_with_custom_params) { "webhook_logs/?page=2&per=26" }
-
-      it "builds the correct URL with no parameters" do
-        expect(FundAmerica::API).to receive(:request).with(:get, base_url_with_default_params)
-        FundAmerica::WebhookLog.list
-      end
-
-      it "builds the correct URL with both parameters" do
-        expect(FundAmerica::API).to receive(:request).with(:get, base_url_with_custom_params)
-        FundAmerica::WebhookLog.list(page: 2, per: 26)
-      end
-    end
-
-    context '#details' do
-      it 'must have object as webhook_log' do
-        unless @webhook.nil?
-          expect(@webhook['object']).to eq('webhook_log')
-        end
-      end
-    end
   end
+
+  # TODO i can't find a way to create an aml exception in test mode in order to test this
+  # context '#details' do
+  #   before(:all) do
+  #     @aml_exception = FundAmerica::AmlException.update("yXlIZxuXRj2mkCgrxWtSRw", { 
+  #       status: "contact_issuer", 
+  #       documentation_required: "true"
+  #     })
+  #     @aml_e = FundAmerica::AmlException.details(@aml_exception['id'])
+  #   end
+
+  #   it 'must return a response' do
+  #     expect(@aml_e).not_to be nil
+  #   end
+
+  #   it 'must have an id' do
+  #     expect(@aml_e['id']).not_to be nil
+  #   end
+
+  #   it 'must return the id same as the one sent in request' do
+  #     expect(@aml_e['id']).to eq(@aml_exception['id'])
+  #   end
+  # end
 end

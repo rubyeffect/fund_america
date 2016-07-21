@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Ruby gem for easy implementation of FundAmerica API in ruby, rails, sinatra apps}
   spec.description   = %q{This is a ruby gem to use the FundAmerica (http://www.fundamerica.com) API easily in your ruby, rails and sinatra apps built by RubyEffect (http://www.rubyeffect.com)}
-  spec.homepage      = "http://www.rubyeffect.com/blog/category/fundamerica"
+  spec.homepage      = "http://blog.rubyeffect.com/category/fundamerica/"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or

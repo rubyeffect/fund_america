@@ -57,29 +57,30 @@ describe FundAmerica::EntityRelationship do
       options_one = {
         :city => 'Las Vegas',
         :country => 'US',
-        :email => "test#{t}@test.com",
-        :name => "Test U#{t}",
+        :email => "test#{t_one}@test.com",
+        :name => "Test C#{t_one}",
         :phone => '12025551212',
         :postal_code => '89123',
         :region => 'NV',
         :street_address_1 => '123 street',
         :tax_id_number => '123123123',
-        :type => "person",
-        :date_of_birth => '1980-01-01'
+        :type => "company",
+        :region_formed_in => 'NV',
+        :contact_name => "Test User"
       }
       @entity_one = FundAmerica::Entity.create(options_one)
       t_two = Time.now.to_i
       options_two = {
         :city => 'Las Vegas',
         :country => 'US',
-        :email => "test#{t}@test.com",
-        :name => "Test U#{t}",
+        :email => "test#{t_two}@test.com",
+        :name => "Test U#{t_two}",
+        :contact_name => "Test User",
         :phone => '12025551212',
         :postal_code => '89123',
         :region => 'NV',
         :street_address_1 => '123 street',
         :tax_id_number => '123123123',
-        :type => "person",
         :date_of_birth => '1980-01-01'
       }
       @entity_two = FundAmerica::Entity.create(options_two)

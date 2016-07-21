@@ -81,7 +81,13 @@ describe FundAmerica::EscrowServiceApplication do
       }
       @offering = FundAmerica::Offering.create(offering_options)
       @escrow_agreement = FundAmerica::EscrowAgreement.create({:offering_id => @offering['id']})
-
+      @signature = FundAmerica::ElectronicSignature.update(
+        @escrow_agreement['electronic_signatures'].first['id'],
+        :user_agent => 'FA Specs',
+        :ip_address => '127.0.0.1',
+        :literal => 'Test Signer',
+        :name => 'Test Signer',
+      )
       esa_options = {
         :offering_id => @offering['id'],
         :escrow_agreement_id => @escrow_agreement['id'],

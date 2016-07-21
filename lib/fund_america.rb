@@ -6,11 +6,7 @@ module FundAmerica
   class << self
     # Returns API key or raises exception
     def api_key
-      # TODO - Uncomment below line for production
       defined? @api_key and @api_key or raise "FundAmerica.api_key not configured"
-
-      # Sandbox test API key is used for development
-      # defined? @api_key and @api_key or @api_key = test_api_key
     end
     attr_writer :api_key
 
@@ -45,11 +41,5 @@ module FundAmerica
         }
       }
     end
-
-    # Sandbox API key - Only for development purpose
-    # TODO - Remove this method for production
-    # def test_api_key
-    #  "sandbox-key-here"
-    # end
   end
 end

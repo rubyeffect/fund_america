@@ -121,7 +121,7 @@ describe FundAmerica::CancelOfferingRequest do
       end
 
       it 'must have the updated status' do
-        expect(@updated_details['status']).to eq('confirmed')
+        expect(@updated_details['status']).to eq('accepted')
       end
     end
   end
