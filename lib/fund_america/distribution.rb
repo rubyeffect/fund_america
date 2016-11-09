@@ -23,6 +23,13 @@ module FundAmerica
       	API::request(:get, "distributions/#{distribution_id}/investor_payments?page=#{page}&per=#{per}")
       end
 
+      # End point: https://apps/fundamerica.com/api/distributions/:id/non_investor_payments
+      # Usage: FundAmerica::Distribution.non_investor_payments(distribution_id)
+      # Output: Returns the non_investor_payments associated with distribution
+      def non_investor_payments(distribution_id, page, per)
+        API::request(:get, "distributions/#{distribution_id}/non_investor_payments?page=#{page}&per=#{per}")
+      end
+
     end
   end
 end
