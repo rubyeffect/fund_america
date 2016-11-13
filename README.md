@@ -71,7 +71,7 @@ $ env FUND_AMERICA_SANDBOX_KEY='<YOUR-SANDBOX-KEY>' rspec
 
 ## About RubyEffect
 
-![RubyEffect](http://www.rubyeffect.com/blog/wp-content/uploads/2015/05/cropped-re_original_logo.png)
+![RubyEffect](http://blog.rubyeffect.com/wp-content/uploads/2015/05/cropped-re_original_logo.png)
 
 RubyEffect builds intuitive, live and elegant software that solves real world problems. We love open source and it's community.
 
