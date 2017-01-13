@@ -45,7 +45,7 @@ The details on usage of FundAmerica gem are present at: http://blog.rubyeffect.c
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To install this gem onto your local machine, run `bundle exec rake install`.
 
 ### Running tests
 
@@ -71,7 +71,7 @@ $ env FUND_AMERICA_SANDBOX_KEY='<YOUR-SANDBOX-KEY>' rspec
 
 ## About RubyEffect
 
-![RubyEffect](http://www.rubyeffect.com/blog/wp-content/uploads/2015/05/cropped-re_original_logo.png)
+![RubyEffect](http://blog.rubyeffect.com/wp-content/uploads/2015/05/cropped-re_original_logo.png)
 
 RubyEffect builds intuitive, live and elegant software that solves real world problems. We love open source and it's community.
 
