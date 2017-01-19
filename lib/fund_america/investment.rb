@@ -53,6 +53,13 @@ module FundAmerica
         API::request(:get, "investments/#{investment_id}/investment_payments")
       end
 
+      # End point: https://apps.fundamerica.com/api/investments/:id/investor_payments (GET)
+      # Usage: FundAmerica::Investment.investor_payments(investment_id)
+      # Output: Returns investor_payments of an investment with matching id
+      def investor_payments(investment_id)
+        API::request(:get, "investments/#{investment_id}/investor_payments")
+      end
+
     end
   end
 end
