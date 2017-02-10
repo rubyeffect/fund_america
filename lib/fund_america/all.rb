@@ -37,4 +37,4 @@ require 'fund_america/email_log'
 require 'fund_america/bank_transfer_method'
 require 'fund_america/rta_agreement'
 require 'fund_america/tech_services_agreement'
-
+require 'fund_america/disbursement'
