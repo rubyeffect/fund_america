@@ -69,9 +69,15 @@ $ env FUND_AMERICA_SANDBOX_KEY='<YOUR-SANDBOX-KEY>' rspec
 2. Charles S (https://github.com/Designbookcom)
 3. David Reid (https://github.com/dreid)
 
+## Authored by
+
+Sanjay Vedula (sanjay.vedula@gmail.com)
+
 ## About RubyEffect
 
-![RubyEffect](http://blog.rubyeffect.com/wp-content/uploads/2015/05/cropped-re_original_logo.png)
+<a href="http://www.rubyeffect.com" target="_blank">
+  <img src="http://blog.rubyeffect.com/wp-content/uploads/2015/05/cropped-re_original_logo.png" alt="RubyEffect">
+</a>
 
 RubyEffect builds intuitive, live and elegant software that solves real world problems. We love open source and it's community.
 
