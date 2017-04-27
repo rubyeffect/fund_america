@@ -5,8 +5,8 @@ module FundAmerica
       # End point: https://apps.fundamerica.com/api/ach_authorizations (GET)
       # Usage: FundAmerica::AchAuthorization.list
       # Output: Returns list of ach_authorizations
-      def list
-        API::request(:get, 'ach_authorizations')
+      def list(options)
+        API::request(:get, 'ach_authorizations', options)
       end
 
       # End point: https://apps.fundamerica.com/api/ach_authorizations (POST)
