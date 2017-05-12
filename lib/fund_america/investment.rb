@@ -53,6 +53,13 @@ module FundAmerica
         API::request(:get, "investments/#{investment_id}/investment_payments")
       end
 
+      # End Point: https://api.fundamerica.com/api/investments/:id/invest (POST)
+      # Usage:  FundAmerica::Investment.invested(investment_id)
+      # Output: If the investment is “received” and “cleared” you’ll get a 200 and the status will be updated.
+      def invested(investment_id)
+        API::request(:post, "investments/#{invetment_id}/invested")
+      end 
+
     end
   end
 end
