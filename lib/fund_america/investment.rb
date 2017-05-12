@@ -57,7 +57,7 @@ module FundAmerica
       # Usage:  FundAmerica::Investment.invested(investment_id)
       # Output: If the investment is “received” and “cleared” you’ll get a 200 and the status will be updated.
       def invested(investment_id)
-        API::request(:post, "investments/#{investment_id}/invested")
+        API::request(:post, "investments/#{investment_id}/invest")
       end 
 
     end
