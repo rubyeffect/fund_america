@@ -10,9 +10,9 @@ module FundAmerica
       end
 
       # End point: https://apps.fundamerica.com/api/selling_agreements/:id (GET)
-      # Usage: FundAmerica::SellingAgreement.details(rta_agreement_id)
+      # Usage: FundAmerica::SellingAgreement.details(selling_agreement_id)
       # Output: Returns the details of an rta_agreement with matching id
-      def details(rta_agreement_id)
+      def details(selling_agreement_id)
         API::request(:get, "selling_agreements/#{selling_agreement_id}")
       end
 
