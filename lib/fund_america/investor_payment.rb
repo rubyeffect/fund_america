@@ -16,6 +16,10 @@ module FundAmerica
         API::request(:get, "investor_payments/#{investor_payment_id}")
       end
 
+      def create(options = {})
+        API::request(:post, options)
+      end 
+
     end
   end
 end
