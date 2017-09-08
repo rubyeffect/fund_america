@@ -30,6 +30,15 @@ module FundAmerica
         API::request(:get, "distributions/#{distribution_id}/non_investor_payments", options)
       end
 
+      # End point: https://apps.fundamerica.com/api/distribution
+      # Usage:     FundAmerica::Distribution.create(options)
+      # Output:    Returns distribution attributes
+      def create(options = {})
+        API::request(:post, 'distributions', options)
+      end
+
     end
   end
 end
+
+
