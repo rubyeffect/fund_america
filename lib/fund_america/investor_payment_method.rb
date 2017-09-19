@@ -25,7 +25,7 @@ module FundAmerica
 
       # End point: https://apps.fundamerica.com/api/investor_payment_method/:id (GET)
       # Usage: FundAmerica::InvestorPaymentMethod.details
-      # Output: Returns investor_payment_method
+      # Output: Returns investor_payment_method details of matching id
       def details(investor_payment_method_id, options = {})
       	API::request(:get, 'investor_payment_method', options)
       end 
