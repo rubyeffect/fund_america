@@ -35,4 +35,5 @@ require 'fund_america/distribution'
 require 'fund_america/holding'
 require 'fund_america/email_log'
 require 'fund_america/bank_transfer_method'
-
+require 'fund_america/disbursement'
+require 'fund_america/investor_payment_method'

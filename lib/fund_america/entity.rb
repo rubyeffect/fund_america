@@ -123,9 +123,16 @@ module FundAmerica
       # Usage: FundAmerica::Entity.platform_investor 
       # Output: Returns entity specific platform_investor information
       # Note: FA platform investor information will also be included with investor information
-      def platform_investor(entity_id )
+      def platform_investor(entity_id)
         API::request(:get, "entities/#{entity_id}/platform_investor")
       end
+
+      # https://apps.fundamerica.com/api/entities/:id/investor_payment_method (GET)
+      # Usage: FundAmerica::Entity.platform_investor 
+      # Output: Returns investors primary payment information
+      def investor_payment_method(entity_id)
+        API::request(:get, "entities/#{entity_id}/investor_payment_method")
+      end 
 
     end
   end

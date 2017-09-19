@@ -16,6 +16,13 @@ module FundAmerica
         API::request(:get, "investor_payments/#{investor_payment_id}")
       end
 
+      # End point: https://apps.fundamerica.com/api/investor_payments (POST)
+      # Usage: FundAmerica::InvestorPayment.create 
+      # Output: Creates a new investor_payment
+      def create(options = {})
+        API::request(:post, 'investor_payments', options)
+      end 
+
     end
   end
 end
