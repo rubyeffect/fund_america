@@ -9,14 +9,32 @@ module FundAmerica
         options = FundAmerica.basic_auth.merge!({:body => options})
         uri = FundAmerica.base_uri + uri unless uri.include?('test_mode')
         response = HTTParty.send(method, uri, options)
-        parsed_response = JSON.parse(response.body)
-        if response.code.to_i == 200
-          # Returns parsed_response - a hash of response body
-          # if response is successful
-          parsed_response
-        else
-          # Raises error if the response is not sucessful
-          raise FundAmerica::Error.new(parsed_response, response.code.to_i)
+        # response = HTTParty.send(method, 'https://sandbox.fundamerica.com/500', options)
+        begin
+          parsed_response = JSON.parse(response.body)
+
+          if response.code.to_i == 200
+            # Returns parsed_response - a hash of response body
+            # if response is successful
+            parsed_response
+          else
+            # Raises error if the response is not sucessful
+            raise FundAmerica::Error.new(parsed_response, response.code.to_i)
+          end
+        rescue JSON::ParserError => e
+          if response.body.include?('An unexpected error has occurred.') || response.body.include?('went wrong') ||
+             response.body.include?('Internal Server Error')
+
+            raise FundAmerica::Error.new('An unexpected error has occurred on the Fund America side.', 500)
+          elsif response.body.include?('unavailable')
+            raise FundAmerica::Error.new('Sorry, escrow provider is current unavailable. Please try later.', 426)
+          elsif response.body.include?('Page Not Found')
+            raise FundAmerica::Error.new('Page Not Found on the Fund America side.', 404)
+          elsif response.body.include?('Not Allowed')
+            raise FundAmerica::Error.new('Not Allowed error on the Fund America side.', 405)
+          else
+            raise FundAmerica::Error.new(e, 500)
+          end
         end
       end
 
