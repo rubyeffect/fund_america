@@ -1,21 +1,19 @@
 require 'spec_helper'
 
-describe FundAmerica::ApiInfo do
+describe FundAmerica::ApiInfo, :vcr do
   context '#info' do
-    before(:all) do
-      @response = FundAmerica::ApiInfo.info
+    let(:response) { FundAmerica::ApiInfo.info }
+
+    it 'return proper account_name' do
+      expect(response['account_name']).to eq('BnkToTheFuture')
     end
 
-    it 'must have account_name in response' do
-      expect(@response['account_name']).not_to be nil
+    it 'return proper user_name' do
+      expect(response['user_name']).to eq('API User')
     end
 
-    it 'must have user_name in response' do
-      expect(@response['user_name']).not_to be nil
-    end
-
-    it 'must have api_version in response' do
-      expect(@response['api_version']).not_to be nil
+    it 'return api_version' do
+      expect(response['api_version']).not_to be_nil
     end
   end
 end
