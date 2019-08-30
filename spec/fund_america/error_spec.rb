@@ -8,7 +8,7 @@ describe FundAmerica::Error do
       @message_404 = 'Resource was not found'
       @message_422 = 'This usually means you are missing or have supplied invalid parameters for a request: {}'
       @message_500 = "Internal server error. Something went wrong. This is a bug. Please report it to support immediately"
-      @message_other = 'An error occured. Please check parsed_response for details'
+      @message_other = "An error occured. Please check parsed_response for details: {}"
     end
 
     it 'must have an error message' do
@@ -86,8 +86,8 @@ describe FundAmerica::Error do
       end
     end
 
-    it 'must match other error message when code is 123' do
-      response = FundAmerica::Error.error_message(123, {})
+    it 'must match other error message when code is 502' do
+      response = FundAmerica::Error.error_message(502, {})
       expect(response).to eq(@message_other)
     end
   end

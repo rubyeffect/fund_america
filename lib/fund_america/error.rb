@@ -23,9 +23,8 @@ module FundAmerica
       when 500 then
         "Internal server error. Something went wrong. This is a bug. Please report it to support immediately"
       else
-        'An error occured. Please check parsed_response for details'
+        "An error occured. Please check parsed_response for details: #{parsed_response}"
       end
     end
-
   end
 end
