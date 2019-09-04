@@ -1,8 +1,8 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+
 require 'fund_america'
 require 'vcr'
-
-FundAmerica.api_key = ENV['FUND_AMERICA_SANDBOX_KEY']
+require 'support/investment_helper.rb'
 
 RSpec::Matchers.define :be_boolean do
   match do |actual|
@@ -24,6 +24,7 @@ RSpec.configure do |config|
   config.after(:each, :vcr) do
     VCR.eject_cassette
   end
+  config.include InvestmentHelper
 end
 
 def select_or_create_vcr_cassette(test_name: ,full_test_context:)
