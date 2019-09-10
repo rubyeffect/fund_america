@@ -1,88 +1,78 @@
 require 'spec_helper'
 
 describe FundAmerica do
+  let(:fund_america_api_key) { ENV['FUND_AMERICA_API_KEY'] }
+  let(:fund_america_mode_key) { nil }
+
+  before do
+    allow(ENV).to receive(:[]).with('FUND_AMERICA_API_KEY').and_return(fund_america_api_key)
+    allow(ENV).to receive(:[]).with('FUND_AMERICA_ENVIRONMENT').and_return(fund_america_mode_key)
+  end
+
   it 'has a version number' do
     expect(FundAmerica::VERSION).not_to be nil
   end
 
-  it 'has an api key' do
-    expect(FundAmerica.api_key).not_to be nil
+  describe '#api_key' do
+    context 'when env FUND_AMERICA_API_KEY is not defined' do
+      let(:fund_america_api_key) { nil }
+
+      it 'raises error' do
+        error = /FundAmerica.api_key not configured/
+        expect { FundAmerica.api_key }.to raise_error(FundAmerica::Error, error)
+      end
+    end
+
+    context 'when env FUND_AMERICA_API_KEY is defined' do
+      it 'returns api key' do
+        expect(FundAmerica.api_key).to eq(fund_america_api_key)
+      end
+    end
   end
 
-  it 'has a mode' do
-    expect(FundAmerica.mode).not_to be nil
+  describe '#mode' do
+    context 'when env FUND_AMERICA_ENVIRONMENT is not defined' do
+      it 'sets mode to sandbox' do
+        expect(FundAmerica.mode).to eq('sandbox')
+      end
+    end
+
+    context 'when env FUND_AMERICA_ENVIRONMENT is defined' do
+      let(:fund_america_mode_key) { 'production' }
+
+      it 'sets mode to to key' do
+        expect(FundAmerica.mode).to eq(fund_america_mode_key)
+      end
+    end
   end
 
-  it 'must have default mode as sandbox' do
-    expect(FundAmerica.mode).to eq('sandbox')
+  describe '#base_uri' do
+    context 'when mode is sandbox' do
+      it 'returns sandbox uri' do
+        expect(FundAmerica.base_uri).to eq('https://sandbox.fundamerica.com/api/')
+      end
+    end
+
+    context 'when mode is production' do
+      let(:fund_america_mode_key) { 'production' }
+
+      it 'returns production uri' do
+        expect(FundAmerica.base_uri).to eq('https://apps.fundamerica.com/api/')
+      end
+    end
   end
 
-  it 'must not have default mode as production' do
-    expect(FundAmerica.mode).not_to eq('production')
-  end
+  describe '#basic_auth' do
+    it 'returns hash object' do
+      expect(FundAmerica.basic_auth).to be_a_kind_of(Hash)
+    end
 
-  it 'must have mode as sandbox when mode is set to sandbox' do
-    FundAmerica.mode = 'sandbox'
-    expect(FundAmerica.mode).to eq('sandbox')
-  end
+    it 'must have a key called :basic_auth' do
+      expect(FundAmerica.basic_auth).to include(:basic_auth)
+    end
 
-  it 'must not have mode as production when mode is set to sandbox' do
-    FundAmerica.mode = 'sandbox'
-    expect(FundAmerica.mode).not_to eq('production')
-  end
-
-  it 'must have mode as production when mode is set to production' do
-    FundAmerica.mode = 'production'
-    expect(FundAmerica.mode).to eq('production')
-  end
-
-  it 'must not have mode as sandbox when mode is set to production' do
-    FundAmerica.mode = 'production'
-    expect(FundAmerica.mode).not_to eq('sandbox')
-  end
-
-  it 'has a base_uri' do
-    expect(FundAmerica.base_uri).not_to be nil
-  end
-
-  it 'must have sandbox base uri if mode is not set' do
-    FundAmerica.mode = nil
-    expect(FundAmerica.base_uri).to eq('https://sandbox.fundamerica.com/api/')
-  end
-
-  it 'must have sandbox base uri if mode is set to sandbox' do
-    FundAmerica.mode = 'sandbox'
-    expect(FundAmerica.base_uri).to eq('https://sandbox.fundamerica.com/api/')
-  end
-
-  it 'must not have production base uri if mode is set to sandbox' do
-    FundAmerica.mode = 'sandbox'
-    expect(FundAmerica.base_uri).not_to eq('https://apps.fundamerica.com/api/')
-  end
-
-  it 'must have production base uri if mode is set to production' do
-    FundAmerica.mode = 'production'
-    expect(FundAmerica.base_uri).to eq('https://apps.fundamerica.com/api/')
-  end
-
-  it 'must not have sandbox base uri if mode is set to production' do
-    FundAmerica.mode = 'production'
-    expect(FundAmerica.base_uri).not_to eq('https://sandbox.fundamerica.com/api/')
-  end
-
-  it 'must have a #basic_auth' do
-    expect(FundAmerica.basic_auth).not_to be nil
-  end
-
-  it 'must have a hash for #basic_auth' do
-    expect(FundAmerica.basic_auth).to be_a_kind_of(Hash)
-  end
-
-  it 'must have a key called :basic_auth for #basic_auth' do
-    expect(FundAmerica.basic_auth).to include(:basic_auth)
-  end
-
-  it 'must have a key called :basic_auth with value as a hash for #basic_auth' do
-    expect(FundAmerica.basic_auth).to include({:basic_auth => be_a_kind_of(Hash)})
+    it 'must have a key called :basic_auth with value as a hash' do
+      expect(FundAmerica.basic_auth[:basic_auth]).to be_a_kind_of(Hash)
+    end
   end
 end

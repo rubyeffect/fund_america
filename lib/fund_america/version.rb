@@ -3,5 +3,5 @@ module FundAmerica
   # The format is Major dot Minor dot patch
   # Check the FundAmerica changelog regularly and add changes from it
   # Increase the patch number
-  VERSION = '0.1.0'.freeze
+  VERSION = '0.1.1'.freeze
 end
