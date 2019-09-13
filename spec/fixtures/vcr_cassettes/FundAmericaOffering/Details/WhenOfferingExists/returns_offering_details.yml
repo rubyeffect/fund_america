@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.fundamerica.com/api/offerings/LIJpysymRHyXvDrX_nvizw
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic TGJNMi1JMGRnZ01kRVA1RXRNSzFOczJrc3F4T2tDZlY6
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 13 Sep 2019 08:00:49 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - close
+      Status:
+      - 200 OK
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000
+      Access-Control-Expose-Headers:
+      - Cache-Control, Content-Disposition, Content-Type, X-FA-Session-Expires-At
+      X-Xss-Protection:
+      - 1; mode=block
+      Access-Control-Max-Age:
+      - '86400'
+      X-Request-Id:
+      - f90c52c4-7633-455e-9bcb-4ae8f46d7316
+      Access-Control-Allow-Headers:
+      - Content-Disposition, Content-Type, X-FA-Public-Key, X-FA-User-Session-Token,
+        X-Requested-With
+      Access-Control-Allow-Methods:
+      - GET, POST, PATCH, DELETE
+      Etag:
+      - W/"3bec818f3888a24f9c40d86b4df8b5d3"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.037797'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger 5.1.8
+    body:
+      encoding: ASCII-8BIT
+      string: '{"object":"offering","id":"LIJpysymRHyXvDrX_nvizw","url":"https://sandbox.fundamerica.com/api/offerings/LIJpysymRHyXvDrX_nvizw","accept_investments":false,"accredited_investors":false,"ach_deposit_amount":"0.0","ach_deposit_max_percent":"0.0","ach_deposit_release_at":null,"ach_limit":null,"amount":"0.0","can_disburse":false,"check_mailing_address":"Prime
+        Trust\n10890 S Eastern Ave\nSuite 114\nHenderson, NV 89502","check_mailing_instructions":"Please
+        make checks payable to \"Prime Trust as Escrow Agent for My very first pitch\"
+        and include a note with your name, phone number, email address, and investor
+        ID in case we have any questions.","closed_at":null,"created_at":"2019-08-05T05:21:33.378Z","delay_aml_until_funds_received":false,"description":null,"eb5":false,"entity_url":"https://sandbox.fundamerica.com/api/entities/Yl5VNP19TuyK3sJHsHDNIg","escrow_closes_at":"2020-12-06T00:00:00.000Z","escrow_status":"pending","escrow_term_days":0,"funds_disbursable":"0.0","funds_in_escrow":"0.0","funds_invested":"0.0","funds_received":"0.0","funds_refunded":"0.0","funds_transfer_methods":["ach","check","wire"],"funds_unavailable":"0.0","investment_increment_amount":null,"max_amount":"100000.0","max_investment_amount":null,"min_amount":"0.0","min_investment_amount":null,"minimum_met":true,"name":"My
+        very first pitch","non_accredited_investors":false,"non_us_investors":false,"opened_at":null,"payment_reference":"\u003cINVESTOR
+        NAME\u003e - My very first pitch","regulatory_exemption":"506c","regulatory_exemption_details":null,"security_url":"https://sandbox.fundamerica.com/api/securities/XhnPeviZQZeaeW0cHNGQ8Q","send_emails":false,"type":"equity","updated_at":"2019-08-20T08:26:47.265Z","us_investors":true,"us_states_only":[],"use_broker_dealer_service":false,"use_prime_trust_vantiv_merchant_id":false,"wire_details":{"bank_address":"One
+        East Washington Street\nPhoenix AZ 85004","bank_name":"Western Alliance Bank","bank_phone":"1
+        (602) 629-1776","routing_number":"122105980","swift_code":"BBFXUS6S","account_number":"00083815908","beneficiary_name":"Prime
+        Trust as Escrow Agent for My very first pitch","beneficiary_address":"10890
+        S Eastern Ave\nSuite 114\nHenderson, NV 89502"}}'
+    http_version: 
+  recorded_at: Fri, 13 Sep 2019 08:00:49 GMT
+recorded_with: VCR 4.0.0
